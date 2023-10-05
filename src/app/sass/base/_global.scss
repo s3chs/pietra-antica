@@ -11,3 +11,8 @@ html {
   padding: 0;
   box-sizing: border-box;
 }
+
+.layout-container {
+  width: 100vw;
+  overflow: hidden !important;
+}

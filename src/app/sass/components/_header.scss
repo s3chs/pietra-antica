@@ -22,7 +22,8 @@
     justify-content: space-between;
 
     .logo {
-      font-weight: 700;
+      font-family: "Cormorant", serif;
+      font-weight: 500;
       font-size: 3.6rem;
       @media (max-width: $layout-breakpoint-medium) {
         font-size: 3rem;
@@ -43,7 +44,7 @@
         margin: 0 20px;
 
         a {
-          font-family: "Roboto", serif;
+          font-family: "Lato", serif;
           font-size: 1rem;
           text-decoration: none;
           color: $black;

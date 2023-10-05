@@ -38,7 +38,7 @@ const Banner = () => {
         <motion.div className="banner" variants={banner}>
             <BannerRowTop title={'Pietra'}/>
             <BannerRowCenter
-                title={'Taille de pierre à Bordeaux'}
+                title={'Taille de pierre à Bordeaux et ses alentours'}
                 playMarquee={playMarquee}
             />
             <BannerRowBottom title={'Antica'}/>
@@ -46,7 +46,7 @@ const Banner = () => {
     );
 };
 
-const AnimatedLetters = ({ title, disabled }: { title: string; disabled?: boolean }) => {
+const AnimatedLetters = ({title, disabled}: {title: string; disabled?: boolean}) => {
     const variants = disabled ? {} : banner;
     const letters = Array.from(title); // Convertir la chaîne en tableau de lettres
 
@@ -69,7 +69,6 @@ const AnimatedLetters = ({ title, disabled }: { title: string; disabled?: boolea
         </motion.span>
     );
 };
-
 
 const BannerRowTop = ({title}: {title: string}) => {
     return (
@@ -136,10 +135,10 @@ const BannerRowCenter = ({title, playMarquee}: {title: string; playMarquee: bool
     return (
         <div className={`banner-row marquee  ${playMarquee && 'animate'}`}>
             <div className="marquee__inner">
-                <AnimatedLetters title={title} />
-                <AnimatedLetters title={title} />
-                <AnimatedLetters title={title} />
-                <AnimatedLetters title={title} disabled/>
+                <AnimatedLetters title={title}/>
+                <AnimatedLetters title={title}/>
+                <AnimatedLetters title={title}/>
+                <AnimatedLetters title={title}/>
             </div>
         </div>
     );

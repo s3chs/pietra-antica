@@ -1,12 +1,14 @@
 'use client';
-import { motion, AnimatePresence, AnimateSharedLayout } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { motion, AnimatePresence} from 'framer-motion';
+import {useState } from 'react';
 import Loader from '@/app/components/Loader/Loader';
 import Banner from '@/app/components/Banner/Banner';
 import Header from '@/app/components/Header/Header';
 
 export default function Index() {
+
     const [loading, setLoading] = useState(true);
+
     return (
         <AnimatePresence>
             {loading ? (

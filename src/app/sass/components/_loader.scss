@@ -4,6 +4,7 @@ body.loading {
 }
 
 .loader-container {
+  overflow: hidden;
   .image-block {
     position: absolute;
 
