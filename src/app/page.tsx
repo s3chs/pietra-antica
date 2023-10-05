@@ -7,16 +7,6 @@ import Header from '@/app/components/Header/Header';
 
 export default function Index() {
     const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        (
-            async () => {
-                const LocomotiveScroll = (await import('locomotive-scroll')).default;
-                const locomotiveScroll = new LocomotiveScroll();
-            }
-        )();
-    }, []);
-
     return (
         <AnimatePresence>
             {loading ? (
