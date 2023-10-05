@@ -46,8 +46,9 @@ const Banner = () => {
     );
 };
 
-const AnimatedLetters = ({title, disabled}: {title: string; disabled?: boolean}) => {
+const AnimatedLetters = ({ title, disabled }: { title: string; disabled?: boolean }) => {
     const variants = disabled ? {} : banner;
+    const letters = Array.from(title); // Convertir la chaîne en tableau de lettres
 
     return (
         <motion.span
@@ -56,7 +57,7 @@ const AnimatedLetters = ({title, disabled}: {title: string; disabled?: boolean})
             initial="initial"
             animate="animate"
         >
-            {[...title].map((letter, index) => (
+            {letters.map((letter, index) => (
                 <motion.span
                     key={index}
                     className="row-letter"
@@ -68,6 +69,7 @@ const AnimatedLetters = ({title, disabled}: {title: string; disabled?: boolean})
         </motion.span>
     );
 };
+
 
 const BannerRowTop = ({title}: {title: string}) => {
     return (
