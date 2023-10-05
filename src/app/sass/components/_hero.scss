@@ -1,0 +1,31 @@
+.hero-container {
+  height: 70vh;
+  display: grid;
+
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+
+  padding: $global-padding;
+  margin-top: 100px;
+
+  .company-first-name {
+    font-size: 10em;
+    font-weight: 600;
+    font-family: $serif;
+
+    grid-area: 2 / 2 / 4 / 5;
+  }
+
+  .company-second-name {
+    font-size: 10em;
+    font-weight: 600;
+    font-family: $serif;
+
+    grid-area: 9 / 1 / 13 / 13;
+    text-align: center;
+
+    span {
+      text-align: center;
+    }
+  }
+}

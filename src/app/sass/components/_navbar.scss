@@ -1,25 +1,26 @@
 .navbar-container {
+  position: fixed;
   height: 100px;
   width: 100%;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 50px;
+  padding: $global-padding;
 
   .company-name-container {
     span {
-      font-family: "Cormorant", serif;
+      font-family: $serif;
       font-weight: 600;
-      font-size: 3.2em;
+      font-size: 3.5em;
       color: $black;
-      font-style: italic;
+      //font-style: italic;
     }
   }
 
   .navigation-links-container {
     a {
-      font-family: "Lato", sans-serif;
+      font-family: $sans-serif;
       text-decoration: none;
       color: $black;
       margin-right: 30px;

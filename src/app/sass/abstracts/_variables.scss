@@ -1,5 +1,5 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Gothic+A1:wght@100;200;300;400;500;600;700&display=swap');
 
 // Colors
 $black: #1C2021;
@@ -7,6 +7,12 @@ $white: #FFF;
 $stone: #FFF1D6;
 $grey: #A85751;
 $dark-grey: #1C2021;
+
+// Fonts
+
+$serif: "Cormorant", serif;
+$sans-serif: "Gothic A1", sans-serif;
+
 
 // Breakpoints
 $layout-breakpoint-large: 1920px;
@@ -17,6 +23,6 @@ $layout-breakpoint-xsmall: 480px;
 $layout-breakpoint-xxsmall: 350px;
 
 //Padding
-$global-padding: 10vh 8vw;
+$global-padding: 0 50px
 
 
