@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
-export default function ImageBlock({id, variants}) {
+export default function ImageBlock({id, variants}: any) {
     return (
         <motion.div
             className={`image-block ${id}`}
