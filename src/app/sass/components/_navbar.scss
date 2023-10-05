@@ -1,0 +1,31 @@
+.navbar-container {
+  height: 100px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+
+  .company-name-container {
+    span {
+      font-family: "Cormorant", serif;
+      font-weight: 600;
+      font-size: 3em;
+      color: $black;
+    }
+  }
+
+  .navigation-links-container {
+    a {
+      font-family: "Lato", sans-serif;
+      text-decoration: none;
+      color: $black;
+      margin-right: 30px;
+
+      &:nth-last-child(1) {
+        margin-right: 0;
+      }
+    }
+  }
+}
