@@ -41,7 +41,7 @@ const itemMain = {
     },
 };
 
-export default function Loader({setLoading}) {
+export default function Loader({setLoading}: any) {
 
     return (
         <motion.div
