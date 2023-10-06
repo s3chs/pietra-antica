@@ -1,0 +1,29 @@
+.hero-marquee {
+  display: grid;
+  grid-area: 4 / 1 / 6 / 13;
+  overflow: hidden;
+  color: $black;
+  transition: 1s opacity ease-in-out;
+
+  &.reveal-marquee {
+    opacity: 1;
+  }
+
+  .marquee-container {
+    position: relative;
+    white-space: nowrap;
+    z-index: 1;
+
+    .marquee-text {
+      font-family: $sans-serif;
+      font-size: 6em;
+      font-weight: 200;
+      position: absolute;
+      bottom: 1vh;
+
+      @media screen and (max-width: $layout-breakpoint-small) {
+        font-size: 8vw;
+      }
+    }
+  }
+}

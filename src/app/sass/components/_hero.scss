@@ -1,31 +1,54 @@
 .hero-container {
-  height: 70vh;
   display: grid;
+  overflow: hidden;
+  height: 150vh;
+  margin: 100px 0 200px 0;
 
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, 1fr);
 
-  padding: $global-padding;
-  margin-top: 100px;
+  .company-first-name, .company-second-name {
+    font-family: $serif;
+    font-size: 12em;
+    font-weight: 600;
+  }
 
   .company-first-name {
-    font-size: 10em;
-    font-weight: 600;
     font-family: $serif;
 
     grid-area: 2 / 2 / 4 / 5;
   }
 
   .company-second-name {
-    font-size: 10em;
-    font-weight: 600;
-    font-family: $serif;
-
-    grid-area: 9 / 1 / 13 / 13;
+    z-index: 5;
     text-align: center;
+
+    grid-area: 6 / 1 / 9 / 13;
 
     span {
       text-align: center;
+    }
+  }
+
+  .company-info {
+    font-size: 1.5em;
+    font-weight: 400;
+    line-height: 30px;
+    font-family: $sans-serif;
+
+    grid-area: 3 / 10 / 4 / 12;
+  }
+
+  .hero-img-container {
+    padding-top: 20px;
+    text-align: center;
+
+    grid-area: 7 / 3 / 12 / 11;
+
+    img {
+      width: 600px;
+      height: 700px;
+      object-fit: cover;
     }
   }
 }
