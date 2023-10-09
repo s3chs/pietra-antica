@@ -5,9 +5,7 @@ export const metadata = {
     description: 'Entreprise de taille de pierre',
 };
 
-export default function RootLayout({children}: {
-    children: React.ReactNode
-}) {
+export default function RootLayout({children}: {children: React.ReactNode}) {
     return (
         <html lang="fr">
         <head>

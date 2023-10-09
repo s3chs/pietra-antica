@@ -2,6 +2,7 @@
 import { LoopingElement } from '../Marquee/LoopingElement';
 import { Marquee } from '../Marquee/Marquee';
 import { useEffect, useRef } from 'react';
+import useDestructureString from '@/app/utils/useDestructureString';
 
 const Hero = () => {
 
@@ -20,11 +21,11 @@ const Hero = () => {
 
     return (
         <div className="hero-container">
-            <div className="company-first-name">
-                <span className="italic">Pietra</span>
+            <div className="company-first-name italic">
+                {useDestructureString('Pietra')}
             </div>
-            <div className="company-second-name">
-                <span className="italic">Antica</span>
+            <div className="company-second-name italic">
+                {useDestructureString('Antica')}
             </div>
             <div className="company-info"><span>Spécialiste de la taille de pierre à Bordeaux et ses alentours.</span></div>
             <div className="hero-img-container">
@@ -32,7 +33,7 @@ const Hero = () => {
             </div>
             <div className="hero-marquee">
                 <Marquee
-                    text={'Taille de pierre et sculpture - Ravalement de façade - Placage pierre et dallage - Maçonnerie traditionnelle et pierre apparente - '}
+                    text={' Taille de pierre et sculpture - Ravalement de façade - Placage pierre et dallage - Maçonnerie traditionnelle et pierre apparente -'}
                     addRef={addToRefs}/>
             </div>
         </div>
