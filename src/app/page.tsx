@@ -7,14 +7,14 @@ import About from '@/app/components/About/About';
 import Video from '@/app/components/Video/Video';
 
 export default function Index() {
-    useEffect(() => {
-        (
-            async () => {
-                const LocomotiveScroll = (await import('locomotive-scroll')).default;
-                const locomotiveScroll = new LocomotiveScroll();
-            }
-        )();
-    }, []);
+    // useEffect(() => {
+    //     (
+    //         async () => {
+    //             const LocomotiveScroll = (await import('locomotive-scroll')).default;
+    //             const locomotiveScroll = new LocomotiveScroll();
+    //         }
+    //     )();
+    // }, []);
 
     return (
         <>
