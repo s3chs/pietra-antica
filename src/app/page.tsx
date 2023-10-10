@@ -1,8 +1,10 @@
-'use client'
+'use client';
 
 import Navbar from '@/app/components/Navbar/Navbar';
 import Hero from '@/app/components/Hero/Hero';
 import { useEffect } from 'react';
+import About from '@/app/components/About/About';
+import Video from '@/app/components/Video/Video';
 
 export default function Index() {
     useEffect(() => {
@@ -18,6 +20,8 @@ export default function Index() {
         <>
             <Navbar/>
             <Hero/>
+            <About/>
+            <Video/>
         </>
     );
 }

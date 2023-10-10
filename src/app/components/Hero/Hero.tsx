@@ -29,7 +29,7 @@ const Hero = () => {
             </div>
             <div className="company-info"><span>Spécialiste de la taille de pierre à Bordeaux et ses alentours.</span></div>
             <div className="hero-img-container">
-                <img src="/images/image-2.jpg" alt="hero-image"/>
+                <img src="/assets/image-2.jpg" alt="hero-image"/>
             </div>
             <div className="hero-marquee">
                 <Marquee

@@ -1,0 +1,14 @@
+.video {
+  align-items: center;
+  justify-content: space-around;
+
+  .video-wrapper {
+    margin: 8vh 0;
+    width: 100%;
+
+    video {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

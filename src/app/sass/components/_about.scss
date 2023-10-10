@@ -1,0 +1,14 @@
+.about {
+  margin-bottom: 0;
+
+  .about-info-container {
+    .about-info {
+      display: block;
+      margin: 8vh 0;
+      line-height: 35px;
+      font-size: 1.3em;
+      font-family: $sans-serif;
+      text-align: justify;
+    }
+  }
+}
