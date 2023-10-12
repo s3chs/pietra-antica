@@ -2,7 +2,7 @@ import useDestructureString from '@/app/utils/useDestructureString';
 
 const About = () => {
     return (
-        <div className="section-container about">
+        <section className="section-container about">
             <div className="section-title">{useDestructureString('Qui sommes nous ?')}</div>
             <div className="section-moto"></div>
             <div className="about-info-container">
@@ -15,9 +15,9 @@ const About = () => {
                 <span className="about-info">
                  Garant d’un savoir-faire millénaire, l’entreprise Pietra Antica vous accompagne dans vos rénovations de biens particuliers, dans la restauration du patrimoine ou dans la création d’ouvrage en pierres massives.
                 </span>
-                <span className="about-info bold">Contactez nous au 06 66 39 67 58.</span>
+                <span className="about-info bold">Contactez nous au 06 12 34 56 78.</span>
             </div>
-        </div>
+        </section>
     );
 };
 

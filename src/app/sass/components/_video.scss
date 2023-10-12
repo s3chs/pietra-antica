@@ -1,6 +1,17 @@
 .video {
   align-items: center;
   justify-content: space-around;
+  margin-bottom: 0;
+
+  .title {
+    margin: 8vh 0 0;
+    font-size: 7em;
+    font-family: $serif;
+    color: $black;
+    font-weight: 600;
+    font-style: italic;
+    margin-right: auto;
+  }
 
   .video-wrapper {
     margin: 8vh 0;

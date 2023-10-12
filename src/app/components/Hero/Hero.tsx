@@ -20,7 +20,7 @@ const Hero = () => {
     }, []);
 
     return (
-        <div className="hero-container">
+        <section className="hero-container">
             <div className="company-first-name italic">
                 {useDestructureString('Pietra')}
             </div>
@@ -36,7 +36,7 @@ const Hero = () => {
                     text={' Taille de pierre et sculpture - Ravalement de façade - Placage pierre et dallage - Maçonnerie traditionnelle et pierre apparente -'}
                     addRef={addToRefs}/>
             </div>
-        </div>
+        </section>
     );
 };
 
