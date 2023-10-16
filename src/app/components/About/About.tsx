@@ -1,5 +1,3 @@
-import useDestructureString from '@/app/utils/useDestructureString';
-
 const About = () => {
     return (
         <section className="section-container about">
