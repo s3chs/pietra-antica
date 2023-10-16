@@ -42,10 +42,24 @@ html {
   padding: $global-padding;
 
   .section-title {
+    display: block;
+    height: auto;
     font-family: $serif;
     font-size: 7em;
     font-weight: 600;
     font-style: italic;
+
+    @media screen and (max-width: $layout-breakpoint-small) {
+      font-size: 5em;
+    }
+
+    @media screen and (max-width: $layout-breakpoint-xsmall) {
+      font-size: 4em;
+    }
+
+    @media screen and (max-width: $layout-breakpoint-xxsmall) {
+      font-size: 3em;
+    }
   }
 }
 

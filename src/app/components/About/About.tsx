@@ -3,7 +3,7 @@ import useDestructureString from '@/app/utils/useDestructureString';
 const About = () => {
     return (
         <section className="section-container about">
-            <div className="section-title">{useDestructureString('Qui sommes nous ?')}</div>
+            <div className="section-title">Qui sommes nous ?</div>
             <div className="section-moto"></div>
             <div className="about-info-container">
                 <span className="about-info">

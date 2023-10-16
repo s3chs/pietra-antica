@@ -11,11 +11,29 @@
     font-weight: 600;
     font-style: italic;
     margin-right: auto;
+
+    @media screen and (max-width: $layout-breakpoint-small) {
+      margin: 5vh 0 0;
+      margin-right: auto;
+      font-size: 5em;
+    }
+
+    @media screen and (max-width: $layout-breakpoint-xsmall) {
+      font-size: 4em;
+    }
+
+    @media screen and (max-width: $layout-breakpoint-xxsmall) {
+      font-size: 3em;
+    }
   }
 
   .video-wrapper {
     margin: 8vh 0;
     width: 100%;
+
+    @media screen and (max-width: $layout-breakpoint-small) {
+      margin: 5vh 0;
+    }
 
     video {
       width: 100%;

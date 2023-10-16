@@ -14,10 +14,6 @@ const Hero = () => {
         }
     };
 
-    useEffect(() => {
-        new LoopingElement(refs.current[0], 0, 0.002);
-        new LoopingElement(refs.current[1], -100, 0.002);
-    }, []);
 
     return (
         <section className="hero-container">
@@ -30,11 +26,6 @@ const Hero = () => {
             <div className="company-info"><span>Spécialiste de la taille de pierre à Bordeaux et ses alentours.</span></div>
             <div className="hero-img-container">
                 <img src="/assets/image-2.jpg" alt="hero-image"/>
-            </div>
-            <div className="hero-marquee">
-                <Marquee
-                    text={' Taille de pierre et sculpture - Ravalement de façade - Placage pierre et dallage - Maçonnerie traditionnelle et pierre apparente -'}
-                    addRef={addToRefs}/>
             </div>
         </section>
     );
