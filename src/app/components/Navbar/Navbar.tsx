@@ -4,6 +4,11 @@ const Navbar = () => {
     function displayNav() {
         navRef.current.classList.toggle('active');
         overlayRef.current.classList.toggle('active');
+        navRef.current.style.pointerEvents = 'none';
+
+        setTimeout(() => {
+            navRef.current.style.pointerEvents = 'auto';
+        }, 700);
     }
 
     const navRef = useRef<any>(null);
