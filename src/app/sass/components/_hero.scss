@@ -3,7 +3,7 @@
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, 1fr);
   height: 140vh;
-  margin: 100px 0 100px 0;
+  margin: 120px 0 100px 0;
   overflow: hidden;
 
   @media screen and (max-width: $layout-breakpoint-small) {
@@ -11,8 +11,8 @@
   }
 
   @media screen and (max-width: $layout-breakpoint-xsmall) {
-    height: 90vh;
-    margin: 130px 0 70px;
+    height: 100vh;
+    margin-bottom: 50px;
   }
 
   .company-first-name, .company-second-name {
@@ -21,7 +21,7 @@
     font-weight: 600;
 
     @media screen and (max-width: $layout-breakpoint-small) {
-      font-size: 11em;
+      font-size: 10em;
     }
 
     @media screen and (max-width: $layout-breakpoint-xsmall) {
@@ -90,7 +90,7 @@
     grid-area: 6 / 3 / 13 / 11;
 
     @media screen and (max-width: $layout-breakpoint-small) {
-      padding-top: 110px;
+      padding-top: 100px;
       grid-area: 3 / 2 / 13 / 12;
     }
 

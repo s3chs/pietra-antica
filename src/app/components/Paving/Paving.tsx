@@ -1,9 +1,6 @@
 const Paving = () => {
     return (
         <div className="work-section-container paving">
-            <div className="image-container">
-                <img src="/assets/image-4.jpg" alt="sculpture image"/>
-            </div>
             <div className="info-container">
                 <span className="title">Placage pierre et dallage</span>
                 <span className="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi incidunt quis rem ut?
@@ -11,6 +8,9 @@ const Paving = () => {
                     pariatur perspiciatis quaerat quis reprehenderit sed sint vitae! Aut commodi consequuntur debitis nesciunt, numquam odio officia, optio sit totam, velit vero.
                 </span>
                 <span className="section-button">Voir plus</span>
+            </div>
+            <div className="image-container">
+                <img src="/assets/image-4.jpg" alt="sculpture image"/>
             </div>
         </div>
     );

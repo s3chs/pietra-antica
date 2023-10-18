@@ -7,16 +7,32 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 5vw;
+  padding: 0 3vw;
   border-bottom: 1px solid $black;
   background-color: #CACFD6;
+
+  @media screen and (max-width: $layout-breakpoint-xsmall) {
+    height: 70px;
+  }
+
+  @media screen and (max-width: $layout-breakpoint-xxsmall) {
+    height: 50px;
+  }
 
   .company-name-container {
     span {
       font-family: $serif;
       font-weight: 500;
-      font-size: 3.5em;
+      font-size: 3em;
       color: $black;
+
+      @media screen and (max-width: $layout-breakpoint-small) {
+        font-size: 2.5em;
+      }
+
+      @media screen and (max-width: $layout-breakpoint-xsmall) {
+        font-size: 2em;
+      }
     }
   }
 
@@ -26,10 +42,20 @@
       text-decoration: none;
       color: $black;
       margin-right: 30px;
+      font-size: 0.9em;
+
+      @media screen and (max-width: $layout-breakpoint-small) {
+        margin-right: 15px;
+
+      }
 
       &:nth-last-child(1) {
         margin-right: 0;
       }
+    }
+
+    @media screen and (max-width: $layout-breakpoint-small) {
+      display: none;
     }
   }
 }

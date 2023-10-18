@@ -11,17 +11,13 @@
       text-align: justify;
 
       @media screen and (max-width: $layout-breakpoint-small) {
-        font-size: 1.2em;
+        font-size: 1.1em;
         margin: 5vh 0;
       }
 
       @media screen and (max-width: $layout-breakpoint-xsmall) {
-        font-size: 1.1em;
-        line-height: 27px;
-      }
-
-      @media screen and (max-width: $layout-breakpoint-xxsmall) {
         font-size: 1em;
+        line-height: 27px;
       }
     }
   }

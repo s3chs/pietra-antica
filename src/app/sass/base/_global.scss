@@ -41,6 +41,10 @@ html {
   margin-bottom: 100px;
   padding: $global-padding;
 
+  @media screen and (max-width: $layout-breakpoint-xsmall) {
+    margin-bottom: 50px;
+  }
+
   .section-title {
     display: block;
     height: auto;
@@ -65,43 +69,85 @@ html {
 
 .work-section-container {
   display: flex;
-  height: 90vh;
+  height: auto;
   border-top: 1px solid $black;
   border-bottom: 1px solid $black;
+
+  @media screen and (max-width: $layout-breakpoint-small) {
+    flex-direction: column;
+  }
+
 
   &.sculpture {
     border-top: 1px solid $black;
     margin-top: 100px;
 
+    @media screen and (max-width: $layout-breakpoint-small) {
+      margin-top: 50px;
+    }
+
     .image-container {
       border-left: 1px solid $black;
+      border-right: none;
+
+      @media screen and (max-width: $layout-breakpoint-small) {
+        border-left: none;
+      }
     }
   }
 
   &.paving {
+    flex-direction: row-reverse;
+
+    @media screen and (max-width: $layout-breakpoint-small) {
+      flex-direction: column;
+    }
+
     .info-container {
       width: calc(50% - 1px);
       background-color: $stone;
+
+      @media screen and (max-width: $layout-breakpoint-small) {
+        width: 100%;
+      }
     }
   }
 
   &.masonry {
     .image-container {
       border-left: 1px solid $black;
+      border-right: none;
+
+      @media screen and (max-width: $layout-breakpoint-small) {
+        border-left: none;
+      }
     }
   }
 
   &.facade {
-    margin-bottom: 100px;
+    flex-direction: row-reverse;
+
+    @media screen and (max-width: $layout-breakpoint-small) {
+      flex-direction: column;
+      margin-bottom: 0;
+    }
 
     .info-container {
       width: calc(50% - 1px);
       background-color: $stone;
+
+      @media screen and (max-width: $layout-breakpoint-small) {
+        width: 100%;
+      }
     }
   }
 
   .image-container {
     border-right: 1px solid $black;
+
+    @media screen and (max-width: $layout-breakpoint-small) {
+      border-right: none;
+    }
   }
 
   border-top: none;
@@ -114,14 +160,18 @@ html {
   justify-content: center;
 
   width: 50%;
-  height: 100%;
-  padding: 0 70px;
+  padding: 50px 70px;
   background-color: $grey;
+
+  @media screen and (max-width: $layout-breakpoint-small) {
+    width: 100%;
+    border-bottom: 1px solid $black;
+    padding: 40px;
+  }
 
   span {
     display: inline-block;
-    padding-bottom: 50px;
-    line-height: 35px;
+    padding-bottom: 70px;
 
     &.title {
       font-family: $serif;
@@ -129,6 +179,15 @@ html {
       color: $black;
       line-height: 70px;
       font-weight: 500;
+
+      @media screen and (max-width: $layout-breakpoint-small) {
+        font-size: 3.5em;
+        line-height: 60px;
+      }
+
+      @media screen and (max-width: $layout-breakpoint-small) {
+        font-size: 2.5em;
+      }
     }
 
     &.description {
@@ -136,6 +195,12 @@ html {
       font-size: 1.2em;
       color: $black;
       text-align: justify;
+      line-height: 35px;
+
+      @media screen and (max-width: $layout-breakpoint-small) {
+        font-size: 1em;
+        line-height: 25px;
+      }
     }
 
     &.section-button {
@@ -145,7 +210,7 @@ html {
       color: $black;
       font-size: 1em;
       text-align: center;
-      padding: 5px 40px;
+      padding: 15px 40px;
       border: 1px solid $black;
       transition: 0.4s all ease-in-out;
 
@@ -153,12 +218,21 @@ html {
         background-color: $black;
         color: $stone;
       }
+
+      @media screen and (max-width: $layout-breakpoint-small) {
+        margin: 0 auto;
+      }
     }
   }
 }
 
 .image-container {
   flex: 1;
+
+  @media screen and (max-width: $layout-breakpoint-small) {
+    flex: none;
+    height: 50vh;
+  }
 
   img {
     width: 100%;
@@ -174,4 +248,16 @@ html {
   font-weight: 600;
   text-align: center;
   font-style: italic;
+
+  @media screen and (max-width: $layout-breakpoint-small) {
+    font-size: 5em;
+  }
+
+  @media screen and (max-width: $layout-breakpoint-xsmall) {
+    font-size: 4em;
+  }
+
+  @media screen and (max-width: $layout-breakpoint-xxsmall) {
+    font-size: 3em;
+  }
 }

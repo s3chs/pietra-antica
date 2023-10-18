@@ -5,9 +5,14 @@
   padding: 0;
   overflow: hidden;
   clip-path: inset(15%);
+  border-bottom: 1px solid $black;
+
+  @media screen and (max-width: $layout-breakpoint-small) {
+    margin-bottom: 50px;
+  }
 
   @media screen and (max-width: $layout-breakpoint-xsmall) {
-    height: 140vh;
+    height: 180vh;
   }
 
   .background-image {
@@ -19,7 +24,7 @@
     border-bottom: 1px solid $black;
 
     @media screen and (max-width: $layout-breakpoint-xsmall) {
-      height: 140vh;
+      height: 180vh;
     }
   }
 
@@ -33,7 +38,7 @@
     opacity: 0;
 
     @media screen and (max-width: $layout-breakpoint-xsmall) {
-      height: 140vh;
+      height: 180vh;
     }
   }
 
@@ -46,7 +51,7 @@
     width: 100%;
 
     @media screen and (max-width: $layout-breakpoint-xsmall) {
-      height: 140vh;
+      height: 180vh;
     }
 
     h1 {
@@ -65,6 +70,7 @@
       }
 
       @media screen and (max-width: $layout-breakpoint-xsmall) {
+        padding-bottom: 0;
         font-size: 4em;
       }
 
@@ -106,8 +112,8 @@
           }
 
           @media screen and (max-width: $layout-breakpoint-xsmall) {
-            margin: 25px 0;
-            font-size: 1.8em;
+            margin: 40px 0;
+            font-size: 1.9em;
             font-weight: 700;
           }
         }
@@ -126,7 +132,6 @@
 
           @media screen and (max-width: $layout-breakpoint-xxsmall) {
             font-size: 1em;
-            margin: 5px;
           }
         }
       }
