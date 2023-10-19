@@ -15,15 +15,6 @@ import Contact from '@/app/components/Contact/Contact';
 
 export default function Index() {
 
-    useEffect(() => {
-        (
-            async () => {
-                const LocomotiveScroll = (await import('locomotive-scroll')).default;
-                const locomotiveScroll = new LocomotiveScroll();
-            }
-        )();
-    }, []);
-
     return (
         <>
             <Hero/>

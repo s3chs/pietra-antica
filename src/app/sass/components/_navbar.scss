@@ -15,7 +15,7 @@
   }
 
   @media screen and (max-width: $layout-breakpoint-xxsmall) {
-    height: 50px;
+    height: 60px;
   }
 
   .company-name-container {
@@ -171,7 +171,8 @@
     }
 
     .overlay-nav-links {
-      span {
+      a {
+        text-decoration: none;
         display: block;
         cursor: pointer;
         font-family: $serif;
