@@ -1,6 +1,5 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import RouterAnimation from '@/app/components/RouterAnimation/RouterAnimation';
 import { PagesType } from '@/app/utils/PagesType';
 
 export default function MentionsLegales() {
