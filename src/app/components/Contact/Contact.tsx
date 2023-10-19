@@ -26,6 +26,7 @@ const Contact = () => {
                 <div className="logo-container">
                     <Image
                         src="/assets/logo.png"
+                        alt="logo"
                         fill={true}
                         priority={true}
                     />

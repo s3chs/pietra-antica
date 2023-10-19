@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect } from 'react';
 import Navbar from '@/app/components/Navbar/Navbar';
 import Hero from '@/app/components/Hero/Hero';
 import About from '@/app/components/About/About';
@@ -12,11 +11,13 @@ import Paving from '@/app/components/Paving/Paving';
 import Masonry from '@/app/components/Masonry/Masonry';
 import Facade from '@/app/components/Facade/Facade';
 import Contact from '@/app/components/Contact/Contact';
+import Introduction from '@/app/components/Introduction/Introduction';
 
 export default function Index() {
 
     return (
         <>
+            <Introduction/>
             <Hero/>
             <About/>
             <Video/>
