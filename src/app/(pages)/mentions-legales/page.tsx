@@ -1,34 +1,10 @@
 'use client';
-import { useEffect } from 'react';
-import gsap from '@/app/gsapSetup';
-import { useRoutingContext } from '@/app/context/RoutingContext';
-import { PagesType } from '@/app/PagesType';
 import { useRouter } from 'next/navigation';
 import RouterAnimation from '@/app/components/RouterAnimation/RouterAnimation';
+import { PagesType } from '@/app/utils/PagesType';
 
 export default function MentionsLegales() {
-
-    const {setFirstRender} = useRoutingContext();
     const router = useRouter();
-
-    useEffect(() => {
-        setFirstRender(false);
-
-        const timeline = gsap.timeline();
-
-        timeline.to('.section-title.legal-mentions span', {
-            y: 0,
-        }).to('.legal-mentions-infos', {
-            opacity: 1,
-            delay: 0.7,
-        }).to('.line-separator', {
-            width: '100%',
-            delay: -0.7,
-        }).to('.back-btn', {
-            opacity: 1,
-            delay: -1,
-        });
-    }, []);
 
     function navigateToHome() {
         const tl = gsap.timeline();
