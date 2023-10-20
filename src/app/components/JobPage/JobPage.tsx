@@ -1,10 +1,5 @@
 import Image from 'next/image';
-import { easeInOut, motion } from 'framer-motion';
-
-export const transition = {
-    duration: 0.5,
-    ease: easeInOut,
-};
+import { useRef, useState } from 'react';
 
 export default function JobPage({
                                     pageName,
@@ -13,29 +8,53 @@ export default function JobPage({
                                     description,
                                 }: {pageName: string, images: any[], error: string | null, description: string}) {
 
+    const [activeCarousel, setActiveCarousel] = useState<boolean>(false);
+    const [activeIndex, setActiveIndex] = useState<number>(0);
+    const carouselContainer = useRef(null);
+
+    function displayImage(index: number) {
+        setActiveIndex(index);
+        setActiveCarousel(true);
+    }
+
+    function changeImageIndex(indexAction: string) {
+        let newIndex = activeIndex;
+
+        if (indexAction === 'increase') {
+            newIndex = (newIndex + 1) % images.length;
+        } else if (indexAction === 'decrease') {
+            newIndex = (newIndex - 1 + images.length) % images.length;
+        }
+
+        setActiveIndex(newIndex);
+    }
+
     return (
-        <div
-            className="job-page-container"
-            transition={transition}
-        >
-            <div className="back-btn">Retour</div>
-            <div className="job-page-section-title">
-                <span>{pageName}</span>
-            </div>
-            <div className="job-page-section-description">
+        <div className={'job-page-container ' + (activeCarousel ? 'display-carousel' : '')}>
+            <div className="job-page-infos">
+                <div className="back-btn">Retour</div>
+                <div className="job-page-section-title">
+                    <span>{pageName}</span>
+                </div>
+                <div className="job-page-section-description">
                 <span>
                 {description}
                 </span>
-            </div>
-            <div className="gallery-title">
-                <span>Galerie</span>
+                </div>
+                <div className="gallery-title">
+                    <span>Galerie</span>
+                </div>
             </div>
             {error ? (<span className="error-message">{error}</span>) :
                 (
                     <>
                         <div className="images-container">
                             {images.map((img, i) => (
-                                <div className="image-container" key={i}>
+                                <div
+                                    className="image-container"
+                                    key={i}
+                                    onClick={() => displayImage(i)}
+                                >
                                     <Image
                                         src={images[i]}
                                         alt="image"
@@ -49,6 +68,43 @@ export default function JobPage({
                                 </div>
                             ))}
                         </div>
+                        {images && activeIndex !== null && (
+                            <div ref={carouselContainer} className={'carousel-container ' + (activeCarousel ? 'display-carousel' : '')}>
+                                <Image
+                                    onClick={() => setActiveCarousel(false)}
+                                    className="cancel"
+                                    src="/assets/cancel.svg"
+                                    alt="cancel-button"
+                                    width={40}
+                                    height={40}
+                                />
+                                <Image
+                                    onClick={() => changeImageIndex('decrease')}
+                                    className="arrow left"
+                                    src="/assets/arrow.svg"
+                                    alt="arrow-left"
+                                    width={70}
+                                    height={70}
+                                />
+                                <div className="carousel-image-container">
+                                    {images.length && (
+                                        <Image
+                                            className="carousel-image"
+                                            src={images[activeIndex]}
+                                            alt="image"
+                                            fill={true}
+                                        />
+                                    )}
+                                </div>
+                                <Image
+                                    onClick={() => changeImageIndex('increase')}
+                                    className="arrow right"
+                                    src="/assets/arrow.svg"
+                                    alt="arrow-left"
+                                    width={70}
+                                    height={70}
+                                />
+                            </div>)}
                     </>
                 )
             }

@@ -1,7 +1,6 @@
 'use client';
 import './sass/main.scss';
 import Navbar from '@/app/components/Navbar/Navbar';
-import { useEffect } from 'react';
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
     return (
@@ -13,7 +12,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         </head>
         <body>
         <div className="layout-container">
-            {/*<Navbar/>*/}
+            <Navbar/>
             {children}
         </div>
         </body>

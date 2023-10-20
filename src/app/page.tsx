@@ -1,6 +1,5 @@
 'use client';
 
-import Navbar from '@/app/components/Navbar/Navbar';
 import Hero from '@/app/components/Hero/Hero';
 import About from '@/app/components/About/About';
 import Video from '@/app/components/Video/Video';
