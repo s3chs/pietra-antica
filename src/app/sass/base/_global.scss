@@ -17,6 +17,13 @@ html {
   width: 100%;
   height: auto;
   overflow: hidden;
+
+  .content-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
 }
 
 .italic {

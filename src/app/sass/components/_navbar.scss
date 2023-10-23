@@ -44,7 +44,8 @@
   .navigation-links-container {
     margin-right: 3vw;
 
-    a {
+    span {
+      cursor: pointer;
       position: relative;
       overflow-x: hidden;
       font-family: $sans-serif;
@@ -184,6 +185,10 @@
 
     &.active {
       top: 0;
+
+      @media screen and (min-width: 1000px) {
+        top: 100vh;
+      }
     }
 
     .overlay-nav-links {
@@ -194,7 +199,7 @@
       align-items: center;
       justify-content: space-evenly;
 
-      a {
+      span {
         display: inline-block;
         text-decoration: none;
         position: relative;
@@ -207,8 +212,12 @@
         margin: 50px;
 
         @media screen and (max-width: $layout-breakpoint-xsmall) {
-          margin: 40px;
+          margin: 40px 0;
           font-size: 2em;
+        }
+
+        @media screen and (max-width: $layout-breakpoint-xxsmall) {
+          font-size: 1.7em;
         }
 
         &::after {

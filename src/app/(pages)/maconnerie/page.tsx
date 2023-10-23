@@ -1,8 +1,7 @@
 'use client';
 
 import JobPage from '@/app/components/JobPage/JobPage';
-import { useEffect, useState } from 'react';
-import gsap from '@/app/utils/gsapSetup';
+import {  useState } from 'react';
 import { PagesType } from '@/app/utils/PagesType';
 
 export default function Maconnerie() {
