@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react';
 const Introduction = () => {
     const refs = useRef([]);
 
-    const addToRefs = (el: any) => {
+    const addToRefs = (el: HTMLElement | null) => {
         if (el && !refs.current.includes(el)) {
             refs.current.push(el);
         }
