@@ -33,7 +33,7 @@ export default function JobPage({
         setActiveIndex(newIndex);
     }
 
-    function navigateToHome(pageName: string) {
+    function navigateToHome() {
         const tl = gsap.timeline();
         tl.to('.back-btn', {
             pointerEvents: 'none',
@@ -53,7 +53,7 @@ export default function JobPage({
     return (
         <div className={'job-page-container ' + (activeCarousel ? 'display-carousel' : '')}>
             <div className="job-page-infos">
-                <div className="back-btn" onClick={() => navigateToHome('Home')}>Retour</div>
+                <div className="back-btn" onClick={() => navigateToHome()}>Retour</div>
                 <div className="job-page-section-title">
                     <span>{pageName}</span>
                 </div>

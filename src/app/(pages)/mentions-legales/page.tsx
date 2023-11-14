@@ -1,44 +1,25 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import { PagesType } from '@/app/utils/PagesType';
+import gsap from '@/app/utils/gsapSetup';
 
 export default function MentionsLegales() {
     const router = useRouter();
 
     function navigateToHome() {
         const tl = gsap.timeline();
-        const pageNameSpan: any = document.querySelector('.router-animation-container span');
-        const routerContainer = document.querySelector('.router-animation-container');
-        const animationLayer = document.querySelector('.animation-layer');
-
-        if (pageNameSpan)
-            pageNameSpan.textContent = PagesType['Home'];
-
-        tl.to(routerContainer, {
-            top: 0,
-            ease: 'power3.inOut',
-            duration: 1,
-        }).to('.layout-container', {
-            height: '100vh',
+        tl.to('.back-btn', {
+            pointerEvents: 'none',
             duration: 0,
-        }).to(animationLayer, {
-            left: 0,
-            ease: 'none',
+        }).to('.content-container', {
+            opacity: 0,
+            onComplete: () => router.push('/'),
+        }).to('.content-container', {
+            delay: 0.5,
+            opacity: 1,
+        }).to('.navigation-links-container > span, .overlay-nav-links > span', {
+            pointerEvents: 'auto',
             duration: 0,
-        }).to(routerContainer, {
-            top: '-100vh',
-            ease: 'power3.inOut',
-            duration: 1,
-        }).to(routerContainer, {
-            top: '100vh',
-            ease: 'none',
-            duration: 0,
-        }).to('.layout-container', {
-            height: 'auto',
-            duration: 0,
-            onComplete: () => {
-                router.push('/');
-            },
         });
     }
 
@@ -72,7 +53,6 @@ export default function MentionsLegales() {
                     <span>23.70Z - Taille, façonnage et finissage de pierres.</span>
                 </div>
             </div>
-            <RouterAnimation/>
         </div>
     );
 }
