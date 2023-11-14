@@ -1,5 +1,8 @@
 import Image from 'next/image';
 import { useRef, useState } from 'react';
+import gsap from '@/app/utils/gsapSetup';
+import { router } from 'next/client';
+import { useRouter } from 'next/navigation';
 
 export default function JobPage({
                                     pageName,
@@ -11,6 +14,7 @@ export default function JobPage({
     const [activeCarousel, setActiveCarousel] = useState<boolean>(false);
     const [activeIndex, setActiveIndex] = useState<number>(0);
     const carouselContainer = useRef(null);
+    const router = useRouter();
 
     function displayImage(index: number) {
         setActiveIndex(index);
@@ -29,10 +33,27 @@ export default function JobPage({
         setActiveIndex(newIndex);
     }
 
+    function navigateToHome(pageName: string) {
+        const tl = gsap.timeline();
+        tl.to('.back-btn', {
+            pointerEvents: 'none',
+            duration: 0,
+        }).to('.content-container', {
+            opacity: 0,
+            onComplete: () => router.push('/'),
+        }).to('.content-container', {
+            delay: 0.5,
+            opacity: 1,
+        }).to('.navigation-links-container > span, .overlay-nav-links > span', {
+            pointerEvents: 'auto',
+            duration: 0,
+        });
+    }
+
     return (
         <div className={'job-page-container ' + (activeCarousel ? 'display-carousel' : '')}>
             <div className="job-page-infos">
-                <div className="back-btn">Retour</div>
+                <div className="back-btn" onClick={() => navigateToHome('Home')}>Retour</div>
                 <div className="job-page-section-title">
                     <span>{pageName}</span>
                 </div>

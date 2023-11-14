@@ -13,7 +13,6 @@ import Contact from '@/app/components/Contact/Contact';
 import Introduction from '@/app/components/Introduction/Introduction';
 
 export default function Index() {
-
     return (
         <>
             <Introduction/>

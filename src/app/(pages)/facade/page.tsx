@@ -3,6 +3,8 @@
 import JobPage from '@/app/components/JobPage/JobPage';
 import { useState } from 'react';
 import { PagesType } from '@/app/utils/PagesType';
+import gsap from '@/app/utils/gsapSetup';
+import { router } from 'next/client';
 
 export default function Facade() {
 

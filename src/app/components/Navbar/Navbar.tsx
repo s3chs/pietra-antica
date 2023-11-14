@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import gsap from '@/app/utils/gsapSetup';
 import { useRouter } from 'next/navigation';
 import { PagesTypeLink } from '@/app/utils/PagesType';
@@ -46,7 +46,7 @@ const Navbar = () => {
     return (
         <div className="navbar-container" ref={navRef}>
             <div className="company-name-container">
-                <span>Pietra Antica</span>
+                <span onClick={() => navigateToPage('Home')}>Pietra Antica</span>
             </div>
             <div className="navigation-links-container">
                 <span onClick={() => navigateToPage('Cutting')}>Taille de pierre</span>
