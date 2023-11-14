@@ -3,9 +3,9 @@ import gsap from 'gsap';
 import { useEffect, useRef } from 'react';
 
 const Introduction = () => {
-    const refs = useRef([]);
+    const refs = useRef<any>([]);
 
-    const addToRefs = (el: HTMLElement | null) => {
+    const addToRefs = (el: any) => {
         if (el && !refs.current.includes(el)) {
             refs.current.push(el);
         }
