@@ -5,8 +5,7 @@ import LocomotiveScroll from 'locomotive-scroll';
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
 
-
-    const locomotiveScroll = new LocomotiveScroll({
+    const locomotiveScroll: any = new LocomotiveScroll({
         lenisOptions: {
             wrapper: window,
             content: document.documentElement,
