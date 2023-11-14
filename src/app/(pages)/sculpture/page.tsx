@@ -3,7 +3,6 @@
 import JobPage from '@/app/components/JobPage/JobPage';
 import { useState } from 'react';
 import { PagesType } from '@/app/utils/PagesType';
-import { PageWrapper } from '@/app/components/PageWrapper/PageWrapper';
 
 export default function Sculpture() {
 
