@@ -4,9 +4,11 @@ import { useRouter } from 'next/navigation';
 import { PagesTypeLink } from '@/app/utils/PagesType';
 
 const Navbar = () => {
-    const router = useRouter();
 
     const [displayResponsiveNav, setDisplayResponsiveNav] = useState<boolean>(false);
+    const navRef = useRef<any>(null);
+    const overlayRef = useRef<any>(null);
+    const router = useRouter();
 
     function displayNav() {
         setDisplayResponsiveNav(displayResponsiveNav => !displayResponsiveNav);
@@ -18,9 +20,6 @@ const Navbar = () => {
             navRef.current.style.pointerEvents = 'auto';
         }, 700);
     }
-
-    const navRef = useRef<any>(null);
-    const overlayRef = useRef<any>(null);
 
     function navigateToPage(pageName: string) {
         if (displayResponsiveNav) {
