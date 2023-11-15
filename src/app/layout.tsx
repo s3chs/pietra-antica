@@ -1,9 +1,9 @@
 'use client';
 import './sass/main.scss';
 import Navbar from '@/app/components/Navbar/Navbar';
+import RoutingContextProvider from '@/app/context/RoutingContext';
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
-
     return (
         <html lang="fr">
         <head>
@@ -15,7 +15,9 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         <div className="layout-container">
             <Navbar/>
             <div className="content-container">
-                {children}
+                <RoutingContextProvider>
+                    {children}
+                </RoutingContextProvider>
             </div>
         </div>
         </body>

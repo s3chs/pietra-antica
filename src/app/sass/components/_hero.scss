@@ -16,6 +16,8 @@
   }
 
   .company-first-name, .company-second-name {
+    opacity: 0;
+    transform: translateY(25px);
     font-family: $serif;
     font-size: 13.5em;
     font-weight: 600;
@@ -65,6 +67,8 @@
   }
 
   .company-info {
+    opacity: 0;
+    transform: translateY(25px);
     font-size: 3em;
     font-weight: 200;
     line-height: 65px;
@@ -84,6 +88,8 @@
   }
 
   .hero-img-container {
+    opacity: 0;
+    transform: translateY(25px);
     padding-top: 35px;
     text-align: center;
 

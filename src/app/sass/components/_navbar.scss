@@ -1,7 +1,7 @@
 .navbar-container {
   position: fixed;
   z-index: 3;
-  height: 80px;
+  height: 0;
   width: 100%;
 
   display: flex;
@@ -19,6 +19,8 @@
   }
 
   .company-name-container {
+    opacity: 0;
+    transform: translateY(25px);
     padding-left: 3vw;
     position: relative;
     z-index: 6;
@@ -43,6 +45,8 @@
   }
 
   .navigation-links-container {
+    opacity: 0;
+    transform: translateY(25px);
     margin-right: 3vw;
 
     span {

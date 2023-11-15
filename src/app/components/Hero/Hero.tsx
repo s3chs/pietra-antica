@@ -14,7 +14,6 @@ const Hero = () => {
         }
     };
 
-
     return (
         <section className="hero-container">
             <div className="company-first-name italic">
