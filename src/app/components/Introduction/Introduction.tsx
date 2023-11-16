@@ -34,11 +34,11 @@ const Introduction = () => {
                     display: 'none',
                     duration: 0,
                 }).
-                to('.navbar-global-container', {
-                    height: '100px',
-                }, '+=0.3').to('.bottom-border', {
-                width: '100%',
-            }, '-=0.2').to('.company-name-container, .navigation-links-container', {
+                to('.navbar-container', {
+                    y: 0,
+                    height: '12vh',
+                    borderBottom: '1px solid black',
+                }, '+=0.3').to('.company-name-container, .navigation-links-container, .navigation-responsive-container', {
                 opacity: 1,
                 y: 0,
             }).

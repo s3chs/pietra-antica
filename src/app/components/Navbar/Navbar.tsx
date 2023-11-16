@@ -43,8 +43,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className="navbar-global-container"  ref={navRef}>
-            <div className="navbar-container">
+            <div className="navbar-container" ref={navRef}>
                 <div className="company-name-container">
                     <span onClick={() => navigateToPage('Home')}>Pietra Antica</span>
                 </div>
@@ -70,8 +69,6 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-            <div className="bottom-border"></div>
-        </div>
     );
 };
 

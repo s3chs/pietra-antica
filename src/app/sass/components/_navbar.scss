@@ -1,71 +1,221 @@
-.navbar-global-container {
+.navbar-container {
   position: fixed;
   z-index: 3;
   height: 0;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #CACFD6;
 
-  .navbar-container {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #CACFD6;
+  .company-name-container {
+    opacity: 0;
+    transform: translateY(25px);
+    padding-left: 3vw;
+    position: relative;
+    z-index: 6;
+    cursor: pointer;
 
-    @media screen and (max-width: $layout-breakpoint-xsmall) {
-      height: 70px;
+    span {
+      display: block;
+      font-family: $serif;
+      font-weight: 500;
+      font-size: 3em;
+      color: $black;
+      transition: 0.7s all ease-in-out;
+
+      @media screen and (max-width: $layout-breakpoint-small) {
+        font-size: 2.5em;
+      }
+
+      @media screen and (max-width: $layout-breakpoint-xsmall) {
+        font-size: 2em;
+      }
     }
+  }
 
-    @media screen and (max-width: $layout-breakpoint-xxsmall) {
-      height: 60px;
-    }
+  .navigation-links-container {
+    opacity: 0;
+    transform: translateY(25px);
+    margin-right: 3vw;
 
-    .company-name-container {
-      opacity: 0;
-      transform: translateY(25px);
-      padding-left: 3vw;
-      position: relative;
-      z-index: 6;
+    span {
       cursor: pointer;
+      position: relative;
+      overflow-x: hidden;
+      font-family: $sans-serif;
+      text-decoration: none;
+      color: $black;
+      margin-right: 30px;
+      font-size: 0.9em;
 
-      span {
-        display: block;
-        font-family: $serif;
-        font-weight: 500;
-        font-size: 3em;
-        color: $black;
-        transition: 0.7s all ease-in-out;
+      @media screen and (max-width: $layout-breakpoint-small) {
+        margin-right: 15px;
+      }
 
-        @media screen and (max-width: $layout-breakpoint-small) {
-          font-size: 2.5em;
-        }
+      &:nth-last-child(1) {
+        margin-right: 0;
+      }
 
-        @media screen and (max-width: $layout-breakpoint-xsmall) {
-          font-size: 2em;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        height: 1px;
+        width: 0;
+        background-color: $black;
+        transition: 0.4s width ease-in-out;
+      }
+
+      &:hover {
+        &::after {
+          width: 100%;
         }
       }
     }
 
-    .navigation-links-container {
-      opacity: 0;
-      transform: translateY(25px);
-      margin-right: 3vw;
+    @media screen and (max-width: 1000px) {
+      display: none;
+    }
+  }
 
-      span {
-        cursor: pointer;
-        position: relative;
-        overflow-x: hidden;
-        font-family: $sans-serif;
-        text-decoration: none;
-        color: $black;
-        margin-right: 30px;
-        font-size: 0.9em;
+  .navigation-responsive-container {
+    opacity: 0;
+    display: none;
+    cursor: pointer;
+    margin-right: 5vw;
+    z-index: 6;
+    height: 40px;
+    width: 40px;
 
-        @media screen and (max-width: $layout-breakpoint-small) {
-          margin-right: 15px;
+    @media screen and (max-width: 1000px) {
+      display: block;
+    }
+
+    .hamburger-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      .bar {
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background-color: $black;
+        transition: 0.4s all ease-in-out;
+
+        &.one {
+          top: 10px;
         }
 
-        &:nth-last-child(1) {
-          margin-right: 0;
+        &.two {
+          top: 19px;
+          width: 70%;
+        }
+
+        &.three {
+          bottom: 10px;
+        }
+      }
+
+      &:hover {
+        .bar {
+          &.one {
+            width: 70%;
+          }
+
+          &.two {
+            width: 100%;
+          }
+
+          &.three {
+            width: 70%;
+          }
+        }
+      }
+    }
+  }
+
+  &.active {
+    .company-name-container {
+      span {
+        @media screen and (max-width: 1000px) {
+          color: $stone;
+        }
+      }
+    }
+
+    .navigation-responsive-container {
+      .hamburger-container {
+        .bar {
+          background-color: $stone;
+
+          &.one {
+            top: 19px;
+            width: 100%;
+            transform: rotate(45deg);
+          }
+
+          &.two {
+            width: 100%;
+            opacity: 0;
+          }
+
+          &.three {
+            bottom: 20px;
+            width: 100%;
+            transform: rotate(-45deg)
+          }
+        }
+      }
+    }
+  }
+
+  .nav-overlay-container {
+    z-index: 4;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: $taupe;
+    top: 100vh;
+    transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+
+    &.active {
+      top: 0;
+
+      @media screen and (min-width: 1000px) {
+        top: 100vh;
+      }
+    }
+
+    .overlay-nav-links {
+      padding: 10vh;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+
+      span {
+        display: inline-block;
+        text-decoration: none;
+        position: relative;
+        cursor: pointer;
+        font-family: $serif;
+        font-weight: 600;
+        text-align: center;
+        color: $stone;
+        font-size: 3em;
+        margin: 50px;
+
+        @media screen and (max-width: $layout-breakpoint-xsmall) {
+          margin: 40px 0;
+          font-size: 2em;
+        }
+
+        @media screen and (max-width: $layout-breakpoint-xxsmall) {
+          font-size: 1.7em;
         }
 
         &::after {
@@ -75,7 +225,7 @@
           left: 0;
           height: 1px;
           width: 0;
-          background-color: $black;
+          background-color: $stone;
           transition: 0.4s width ease-in-out;
         }
 
@@ -85,174 +235,13 @@
           }
         }
       }
-
-      @media screen and (max-width: 1000px) {
-        display: none;
-      }
-    }
-
-    .navigation-responsive-container {
-      display: none;
-      cursor: pointer;
-      margin-right: 5vw;
-      z-index: 6;
-      height: 40px;
-      width: 40px;
-
-      @media screen and (max-width: 1000px) {
-        display: block;
-      }
-
-      .hamburger-container {
-        position: relative;
-        width: 100%;
-        height: 100%;
-
-        .bar {
-          position: absolute;
-          width: 100%;
-          height: 1px;
-          background-color: $black;
-          transition: 0.4s all ease-in-out;
-
-          &.one {
-            top: 10px;
-          }
-
-          &.two {
-            top: 19px;
-            width: 70%;
-          }
-
-          &.three {
-            bottom: 10px;
-          }
-        }
-
-        &:hover {
-          .bar {
-            &.one {
-              width: 70%;
-            }
-
-            &.two {
-              width: 100%;
-            }
-
-            &.three {
-              width: 70%;
-            }
-          }
-        }
-      }
-    }
-
-    &.active {
-      .company-name-container {
-        span {
-          @media screen and (max-width: 1000px) {
-            color: $stone;
-          }
-        }
-      }
-
-      .navigation-responsive-container {
-        .hamburger-container {
-          .bar {
-            background-color: $stone;
-
-            &.one {
-              top: 19px;
-              width: 100%;
-              transform: rotate(45deg);
-            }
-
-            &.two {
-              width: 100%;
-              opacity: 0;
-            }
-
-            &.three {
-              bottom: 20px;
-              width: 100%;
-              transform: rotate(-45deg)
-            }
-          }
-        }
-      }
-    }
-
-    .nav-overlay-container {
-      z-index: 4;
-      position: fixed;
-      width: 100%;
-      height: 100vh;
-      background-color: $taupe;
-      top: 100vh;
-      transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1);
-
-      &.active {
-        top: 0;
-
-        @media screen and (min-width: 1000px) {
-          top: 100vh;
-        }
-      }
-
-      .overlay-nav-links {
-        padding: 10vh;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-
-        span {
-          display: inline-block;
-          text-decoration: none;
-          position: relative;
-          cursor: pointer;
-          font-family: $serif;
-          font-weight: 600;
-          text-align: center;
-          color: $stone;
-          font-size: 3em;
-          margin: 50px;
-
-          @media screen and (max-width: $layout-breakpoint-xsmall) {
-            margin: 40px 0;
-            font-size: 2em;
-          }
-
-          @media screen and (max-width: $layout-breakpoint-xxsmall) {
-            font-size: 1.7em;
-          }
-
-          &::after {
-            content: "";
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            height: 1px;
-            width: 0;
-            background-color: $stone;
-            transition: 0.4s width ease-in-out;
-          }
-
-          &:hover {
-            &::after {
-              width: 100%;
-            }
-          }
-        }
-      }
     }
   }
+}
 
-  .bottom-border {
-    height: 1px;
-    width: 0;
-    background-color: $black;
-  }
+.bottom-border {
+  height: 1px;
+  width: 0;
+  background-color: $black;
 }
 
