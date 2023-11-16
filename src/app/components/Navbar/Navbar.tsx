@@ -43,31 +43,34 @@ const Navbar = () => {
     }
 
     return (
-        <div className="navbar-container" ref={navRef}>
-            <div className="company-name-container">
-                <span onClick={() => navigateToPage('Home')}>Pietra Antica</span>
-            </div>
-            <div className="navigation-links-container">
-                <span onClick={() => navigateToPage('Cutting')}>Taille de pierre</span>
-                <span onClick={() => navigateToPage('Paving')}>Placage et dallage</span>
-                <span onClick={() => navigateToPage('Facade')}>Ravalement de façade</span>
-                <span onClick={() => navigateToPage('Masonry')}>Maçonnerie traditionelle</span>
-            </div>
-            <div className="navigation-responsive-container" onClick={displayNav}>
-                <div className="hamburger-container">
-                    <div className="bar one"></div>
-                    <div className="bar two"></div>
-                    <div className="bar three"></div>
+        <div className="navbar-global-container"  ref={navRef}>
+            <div className="navbar-container">
+                <div className="company-name-container">
+                    <span onClick={() => navigateToPage('Home')}>Pietra Antica</span>
                 </div>
-            </div>
-            <div className={displayResponsiveNav ? 'nav-overlay-container active' : 'nav-overlay-container'} ref={overlayRef}>
-                <div className="overlay-nav-links">
+                <div className="navigation-links-container">
                     <span onClick={() => navigateToPage('Cutting')}>Taille de pierre</span>
                     <span onClick={() => navigateToPage('Paving')}>Placage et dallage</span>
                     <span onClick={() => navigateToPage('Facade')}>Ravalement de façade</span>
                     <span onClick={() => navigateToPage('Masonry')}>Maçonnerie traditionelle</span>
                 </div>
+                <div className="navigation-responsive-container" onClick={displayNav}>
+                    <div className="hamburger-container">
+                        <div className="bar one"></div>
+                        <div className="bar two"></div>
+                        <div className="bar three"></div>
+                    </div>
+                </div>
+                <div className={displayResponsiveNav ? 'nav-overlay-container active' : 'nav-overlay-container'} ref={overlayRef}>
+                    <div className="overlay-nav-links">
+                        <span onClick={() => navigateToPage('Cutting')}>Taille de pierre</span>
+                        <span onClick={() => navigateToPage('Paving')}>Placage et dallage</span>
+                        <span onClick={() => navigateToPage('Facade')}>Ravalement de façade</span>
+                        <span onClick={() => navigateToPage('Masonry')}>Maçonnerie traditionelle</span>
+                    </div>
+                </div>
             </div>
+            <div className="bottom-border"></div>
         </div>
     );
 };

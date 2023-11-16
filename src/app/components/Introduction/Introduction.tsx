@@ -34,18 +34,19 @@ const Introduction = () => {
                     display: 'none',
                     duration: 0,
                 }).
-                to('.navbar-container', {
+                to('.navbar-global-container', {
                     height: '100px',
-                }, '+=0.3').
-                to('.company-name-container, .navigation-links-container', {
-                    opacity: 1,
-                    y: 0,
-                }).
+                }, '+=0.3').to('.bottom-border', {
+                width: '100%',
+            }, '-=0.2').to('.company-name-container, .navigation-links-container', {
+                opacity: 1,
+                y: 0,
+            }).
                 to('.company-first-name, .company-second-name, .company-info, .hero-img-container', {
                     opacity: 1,
                     y: 0,
                     stagger: 0.1,
-                }, "-=0.2").to('.layout-container', {
+                }, '-=0.2').to('.layout-container', {
                 height: 'auto',
                 duration: 0,
                 onComplete: () => setFirstRender(false),
