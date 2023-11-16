@@ -64,8 +64,8 @@ const Navbar = () => {
                     <div className="overlay-nav-links">
                         <span onClick={() => navigateToPage('Cutting')}>Taille de pierre</span>
                         <span onClick={() => navigateToPage('Paving')}>Placage et dallage</span>
-                        <span onClick={() => navigateToPage('Facade')}>Ravalement de façade</span>
-                        <span onClick={() => navigateToPage('Masonry')}>Maçonnerie traditionelle</span>
+                        <span onClick={() => navigateToPage('Facade')}>Ravalement de facade</span>
+                        <span onClick={() => navigateToPage('Masonry')}>Maconnerie traditionelle</span>
                     </div>
                 </div>
             </div>
