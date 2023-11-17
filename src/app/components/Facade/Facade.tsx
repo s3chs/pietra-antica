@@ -1,4 +1,4 @@
-const Facade = () => {
+const Facade = ({navigateToPage}: () => void) => {
     return (
         <div className="work-section-container facade">
             <div className="info-container">
@@ -7,7 +7,7 @@ const Facade = () => {
                     Aliquam commodi consectetur consequatur cumque eos explicabo hic illum in ipsum minus necessitatibus nisi officia optio,
                     pariatur perspiciatis quaerat quis reprehenderit sed sint vitae! Aut commodi consequuntur debitis nesciunt, numquam odio officia, optio sit totam, velit vero.
                 </span>
-                <span className="section-button">Voir plus</span>
+                <span className="section-button" onClick={() => navigateToPage('Facade')}>Voir plus</span>
             </div>
             <div className="image-container">
                 <img src="/assets/image-1.jpg" alt="façade image"/>
