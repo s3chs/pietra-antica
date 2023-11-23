@@ -41,16 +41,28 @@ const Introduction = () => {
                 }, '+=0.3').to('.company-name-container, .navigation-links-container, .navigation-responsive-container', {
                 opacity: 1,
                 y: 0,
-            }).
-                to('.company-first-name, .company-second-name, .company-info, .hero-img-container', {
-                    opacity: 1,
-                    y: 0,
-                    stagger: 0.1,
-                }, '-=0.2').to('.layout-container', {
+            }).to('.company-first-name, .company-second-name, .company-info, .hero-img-container', {
+                opacity: 1,
+                y: 0,
+                stagger: 0.1,
+            }, '-=0.2').to('.layout-container', {
                 height: 'auto',
                 duration: 0,
                 onComplete: () => setFirstRender(false),
             });
+        } else {
+            const tl = gsap.timeline();
+            tl.to('.introduction-container', {
+                display: 'none',
+                duration: 0,
+            }).to('.layout-container', {
+                height: 'auto',
+                duration: 0,
+            }).to('.company-first-name, .company-second-name, .company-info, .hero-img-container', {
+                opacity: 1,
+                y: 0,
+                stagger: 0.1,
+            }, '<');
         }
     }, []);
 

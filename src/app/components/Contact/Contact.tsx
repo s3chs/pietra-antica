@@ -14,8 +14,8 @@ const Contact = () => {
                     <div className="col">
                         <div className="col-left">
                             <span className="name">Nelson Spenle</span>
-                            <span className="address">35 rue de la drag queen</span>
-                            <span className="zip">33000, LGBT land</span>
+                            <span className="address">35 rue de la street</span>
+                            <span className="zip">33000, Bordeaux</span>
                         </div>
                         <div className="col-right">
                             <span className="phone">06 30 53 48 76</span>

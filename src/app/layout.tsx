@@ -4,6 +4,7 @@ import Navbar from '@/app/components/Navbar/Navbar';
 import RoutingContextProvider from '@/app/context/RoutingContext';
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
+
     return (
         <html lang="fr">
         <head>

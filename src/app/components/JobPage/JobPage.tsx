@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import { useRef, useState } from 'react';
-import gsap from '@/app/utils/gsapSetup';
-import { router } from 'next/client';
+import { useEffect, useRef, useState } from 'react';
+import gsap from 'gsap';
 import { useRouter } from 'next/navigation';
+import { useRoutingContext } from '@/app/context/RoutingContext';
 
 export default function JobPage({
                                     pageName,
@@ -15,6 +15,22 @@ export default function JobPage({
     const [activeIndex, setActiveIndex] = useState<number>(0);
     const carouselContainer = useRef(null);
     const router = useRouter();
+    const {firstRender, setFirstRender} = useRoutingContext();
+
+    useEffect(() => {
+        if (firstRender) {
+            const tl = gsap.timeline();
+            tl.to('.navbar-container', {
+                y: 0,
+                height: '12vh',
+                borderBottom: '1px solid black',
+            }).to('.company-name-container, .navigation-links-container, .navigation-responsive-container', {
+                opacity: 1,
+                y: 0,
+            });
+        }
+        setFirstRender(false);
+    }, []);
 
     function displayImage(index: number) {
         setActiveIndex(index);
