@@ -48,7 +48,7 @@ export default function Index() {
             <Paving navigateToPage={navigateToPage}/>
             <Masonry navigateToPage={navigateToPage}/>
             <Facade navigateToPage={navigateToPage}/>
-            <Contact navigateToPage={navigateToPage}/>
+            <Contact/>
         </>
     );
 }
