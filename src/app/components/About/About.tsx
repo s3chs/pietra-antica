@@ -1,7 +1,38 @@
+import { useEffect } from 'react';
+import gsap from '@/app/utils/gsapSetup';
+
 const About = () => {
+
+    useEffect(() => {
+        const aboutSection = document.querySelector('.section-container.about');
+        const aboutTexts = document.querySelectorAll('.about-info');
+
+        if (aboutSection) {
+            gsap.to(aboutSection, {
+                scrollTrigger: {
+                    trigger: '.section-title.about',
+                    start: 'top 85%',
+                    toggleClass: 'reveal-text',
+                    once: true,
+                },
+            });
+        }
+
+        aboutTexts.forEach(el => gsap.to(aboutSection, {
+                scrollTrigger: {
+                    trigger: el,
+                    start: '0% 85%',
+                    toggleClass: 'reveal-text',
+                    once: true,
+                },
+            }),
+        );
+
+    }, []);
+
     return (
         <section className="section-container about">
-            <div className="section-title">Qui sommes nous ?</div>
+            <div className="section-title about">Qui sommes nous ?</div>
             <div className="section-moto"></div>
             <div className="about-info-container">
                 <span className="about-info">

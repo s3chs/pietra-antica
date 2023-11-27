@@ -1,13 +1,23 @@
 import { useLayoutEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import gsap from '@/app/utils/gsapSetup';
 
 const Work = () => {
 
     const sectionRef = useRef<any>(null);
 
     useLayoutEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
+        const workSection = document.querySelector('.section-container.work');
+
+        if (workSection) {
+            gsap.to(workSection, {
+                scrollTrigger: {
+                    trigger: workSection,
+                    start: 'top 85%',
+                    toggleClass: 'reveal-text',
+                    once: true,
+                },
+            });
+        }
 
         const tl = gsap.timeline({
             scrollTrigger: {

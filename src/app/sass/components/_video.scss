@@ -11,6 +11,13 @@
     font-weight: 600;
     font-style: italic;
     margin-right: auto;
+    opacity: 0;
+
+    transition: 0.4s opacity ease-in-out;
+
+    &.reveal-text {
+      opacity: 1;
+    }
 
     @media screen and (max-width: $layout-breakpoint-small) {
       margin: 5vh 0 0;
@@ -28,8 +35,14 @@
   }
 
   .video-wrapper {
+    opacity: 0;
     margin: 8vh 0;
     width: 100%;
+    transition: 0.4s opacity ease-in-out;
+
+    &.reveal-video {
+      opacity: 1;
+    }
 
     @media screen and (max-width: $layout-breakpoint-small) {
       margin: 5vh 0;
