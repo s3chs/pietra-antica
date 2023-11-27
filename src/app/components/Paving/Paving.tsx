@@ -1,4 +1,6 @@
-const Paving = ({navigateToPage}: () => void) => {
+import { NavigateToPageFunctionProp } from '@/app/page';
+
+const Paving = ({navigateToPage}: NavigateToPageFunctionProp) => {
     return (
         <div className="work-section-container paving">
             <div className="info-container">

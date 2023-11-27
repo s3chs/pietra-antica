@@ -15,6 +15,10 @@ import gsap from '@/app/utils/gsapSetup';
 import { PagesTypeLink } from '@/app/utils/PagesType';
 import { useRouter } from 'next/navigation';
 
+export interface NavigateToPageFunctionProp {
+    navigateToPage: (pageName: string) => void;
+}
+
 export default function Index() {
 
     const router = useRouter();
@@ -48,7 +52,7 @@ export default function Index() {
             <Paving navigateToPage={navigateToPage}/>
             <Masonry navigateToPage={navigateToPage}/>
             <Facade navigateToPage={navigateToPage}/>
-            <Contact/>
+            <Contact navigateToPage={navigateToPage}/>
         </>
     );
 }

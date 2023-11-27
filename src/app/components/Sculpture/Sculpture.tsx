@@ -1,4 +1,6 @@
-const Sculpture = ({navigateToPage}: () => void) => {
+import { NavigateToPageFunctionProp } from '@/app/page';
+
+const Sculpture = ({navigateToPage}: NavigateToPageFunctionProp) => {
     return (
         <div className="work-section-container sculpture">
             <div className="info-container">

@@ -1,4 +1,6 @@
-const Masonry = ({navigateToPage}: () => void) => {
+import { NavigateToPageFunctionProp } from '@/app/page';
+
+const Masonry = ({navigateToPage}: NavigateToPageFunctionProp) => {
     return (
         <div className="work-section-container masonry">
             <div className="info-container">
