@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { useEffect } from 'react';
 import gsap from '@/app/utils/gsapSetup';
 
-const Contact = ({navigateToPage}: () => void) => {
+const Contact = ({navigateToPage}: () => void)  => {
     useEffect(() => {
         const contactSection = document.querySelector('.section-container.contact');
 
