@@ -8,7 +8,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
     return (
         <html lang="fr">
         <head>
-            <link rel="shortcut icon" href="/favicon/favicon.ico"/>
+            <link rel="shortcut icon" href="/assets/favicon/favicon.ico"/>
             <title>Pietra Antica</title>
             <meta name="description" content="Entreprise de taille de pierre"/>
         </head>
