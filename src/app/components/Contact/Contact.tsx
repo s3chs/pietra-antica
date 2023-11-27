@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { useEffect } from 'react';
 import gsap from '@/app/utils/gsapSetup';
 
-const Contact = () => {
+const Contact = ({navigateToPage}: () => void) => {
     useEffect(() => {
         const contactSection = document.querySelector('.section-container.contact');
 
@@ -59,7 +59,7 @@ const Contact = () => {
                 </div>
                 <div className="right-infos">
                     <span className="title">Informations</span>
-                    <span className="legal-mentions">Mentions légales</span>
+                    <span className="legal-mentions" onClick={() => navigateToPage('LegalMentions')}>Mentions légales</span>
                     <span className="site-name">Pietra Antica 2023</span>
                     <span className="site-creator">Site web créé par philippe buteau</span>
                 </div>
